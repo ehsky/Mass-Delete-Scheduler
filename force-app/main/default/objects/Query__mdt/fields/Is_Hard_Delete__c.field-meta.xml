@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Hard_Delete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >This field is used for queries of operation type Delete. If this checkbox is checked, the records marked for deletion are &quot;hard deleted&quot;, meaning they cannot be recovered from the recycle bin.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText
+  >Used for queries of operation type Delete. If this checkbox is checked, the records marked for deletion are &quot;hard deleted&quot;, meaning they cannot be recovered from the recycle bin.</inlineHelpText>
+    <label>Hard Delete</label>
+    <type>Checkbox</type>
+</CustomField>
