@@ -6,19 +6,30 @@ Salesforce does not have a standard framework for deleting records on a regular 
 
 Example use cases:
 
-- Delete stail leads created over two years ago that have not been viewed by a user in two years <br/>
+- Delete stail leads created over two years ago that have not been viewed by a user in two years \
   ` SELECT Id FROM Lead WHERE CreatedDate < LAST_N_DAYS:730 AND LastViewedDate < LAST_N_DAYS:730 ORDER BY CreatedDate DESC`
-- Delete contacts or accounts that have requested to be deleted. <br/>
+- Delete contacts or accounts that have requested to be deleted. \
   `SELECT Id FROM Contact WHERE PendingDeletion__c = TRUE`
-- Delete logs from your logger objects <br/>
+- Delete logs from your logger objects \
   ` SELECT ID FROM Logs__c WHERE CreatedDate < LAST_N_DAYS:30`
 
 ## Ad-hoc deletion
 
-You can delete records pr. need using Anoynomous Apex, using the script below. The first parameter you pass in is the query of the records that you want to delete. <br/>
+You can delete records pr. need using Anoynomous Apex, using the script below. The first parameter you pass in is the query of the records that you want to delete. \
 The second parameter you pass in control if we are additionally going to delete the record from the recycle bin.
 
 `Database.executeBatch(new MassDeleteBatchable('SELECT Id FROM Contact WHERE PendingDeletion__c = TRUE LIMIT 50', 'true'));`
+
+## Deploy
+
+You can use the quick installer here to deploy directly to your org. \
+[![Deploy to salesforce](https://githubsfdeploy.herokuapp.com/resources/img/deploy.png)](https://githubsfdeploy.herokuapp.com/?owner=ehsky&repo=Mass-Delete-Scheduler)
+
+### Quick hands-on demo in Salesforce org
+
+You can quickly spin up an org by clicking on the picture below. \
+This will create a scratch org that you have access to for 1 day \
+[![Demo scratch org](/.assets/deployDemo.png)](https://hosted-scratch.herokuapp.com/launch?template=https://github.com/ehsky/Mass-Delete-Scheduler)
 
 # How to set up new scheduled delete job
 
