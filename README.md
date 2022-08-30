@@ -48,6 +48,9 @@ This will create a scratch org that you have access to for 1 day \
     8.  Condition: This field contains the condition that determines what records should be deleted. This will be used in a SOQL-query following the WHERE-clause. For example, the value could be `CreatedDate < LAST_N_DAYS:365`.
     9.  Protected Component: Leave this value unchecked.
 
+Example record \
+![Example query ](.assets/exampleQueryRecord.png)
+
 ## Query Custom Metadata Type
 
 For a simple administration of what records are to be deleted, a new Custom Metadata Type Query has been created. This object can be used to hold specific SOQL queries. If the Operation Type of the Query is 'Delete', this query decides that these records will be deleted.
